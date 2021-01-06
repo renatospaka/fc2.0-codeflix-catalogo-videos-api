@@ -6,5 +6,4 @@ cd /home/node/app
 
 npm install
 
-npm start
-
+nodemon -L
