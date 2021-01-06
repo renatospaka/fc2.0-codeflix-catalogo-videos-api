@@ -41,6 +41,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+.npm-cache/
 
 # Optional eslint cache
 .eslintcache
@@ -63,4 +64,3 @@ typings/
 # Cache used by TypeScript's incremental build
 *.tsbuildinfo
 
-.npm-cache/
