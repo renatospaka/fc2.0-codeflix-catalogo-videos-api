@@ -11,3 +11,30 @@ services:
       - HOST=0.0.0.0
     volumes:
       - .:/home/node/app
+    networks:
+      - app-network
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
+    container_name: catalogo-elasticsearch
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - ./.docker/elasticdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - app-network
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.5.1
+    container_name: catalogo-kibana
+    ports:
+      - 5601:5601
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
