@@ -13,6 +13,7 @@ services:
       - .:/home/node/app
     networks:
       - app-network
+      - catalogo-videos-rabbitmq_catalogo
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.5.1
@@ -37,4 +38,6 @@ services:
 networks:
   app-network:
     driver: bridge
+  catalogo-videos-rabbitmq_catalogo:
+    external: true
 
